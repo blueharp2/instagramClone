@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Add Photo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ImageViewController" customModule="instagramClone" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="kG7-An-Zh7"/>
+                    <tabBarItem key="tabBarItem" title="Add Photo" id="kG7-An-Zh7"/>
+                    <connections>
+                        <outlet property="imageView" destination="URA-5M-HMH" id="L31-1j-hJK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
