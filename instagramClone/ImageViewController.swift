@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, Setup{
+class ImageViewController: UIViewController, Setup, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     @IBOutlet weak var imageView: UIImageView!
     
@@ -20,6 +20,7 @@ class ImageViewController: UIViewController, Setup{
         super.viewDidLoad()
         setup()
         setupAppearance()
+       // presentActionSheet()
         
     }
     
@@ -36,13 +37,13 @@ class ImageViewController: UIViewController, Setup{
         let actionSheet = UIAlertController(title: "Find Image", message: "Do you want to use your camera or photo library?", preferredStyle: .Alert)
         
         let cameraAction = UIAlertAction(title: "Camera", style: .Default) { (action) in
-           // self.presentImagePicker(.Camera)
+            self.presentImagePicker(.Camera)
         }
         
         let photosAction = UIAlertAction(title: "Photos", style: .Default) { (action) in
-            //self.presentImagePicker(.PhotoLibrary)
-            
+            self.presentImagePicker(.PhotoLibrary)
         }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
         
@@ -51,6 +52,13 @@ class ImageViewController: UIViewController, Setup{
         actionSheet.addAction(photosAction)
         
         self.presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    
+    func presentImagePicker(sourceType:UIImagePickerControllerSourceType){
+        self.imagePicker.delegate = self
+        self.imagePicker.sourceType = sourceType
+        self.presentViewController(self.imagePicker, animated: true, completion: nil)
     }
  
 }
