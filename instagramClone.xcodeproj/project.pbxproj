@@ -13,6 +13,7 @@
 		906A0E611D19E5680044055F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 906A0E601D19E5680044055F /* Assets.xcassets */; };
 		906A0E641D19E5680044055F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906A0E621D19E5680044055F /* LaunchScreen.storyboard */; };
 		906A0E6F1D19ED200044055F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E6E1D19ED200044055F /* Protocols.swift */; };
+		906A0E721D19FEE90044055F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906A0E711D19FEE90044055F /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		906A0E631D19E5680044055F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		906A0E651D19E5680044055F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		906A0E6E1D19ED200044055F /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		906A0E701D19FEE60044055F /* instagramClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = instagramClone.entitlements; sourceTree = "<group>"; };
+		906A0E711D19FEE90044055F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906A0E721D19FEE90044055F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +44,7 @@
 		906A0E4D1D19E5680044055F = {
 			isa = PBXGroup;
 			children = (
+				906A0E711D19FEE90044055F /* CloudKit.framework */,
 				906A0E581D19E5680044055F /* instagramClone */,
 				906A0E571D19E5680044055F /* Products */,
 			);
@@ -56,6 +61,7 @@
 		906A0E581D19E5680044055F /* instagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				906A0E701D19FEE60044055F /* instagramClone.entitlements */,
 				906A0E6B1D19EAEB0044055F /* App Global */,
 				906A0E6C1D19EB060044055F /* Controllers */,
 				906A0E6D1D19EB120044055F /* Views */,
@@ -123,6 +129,12 @@
 				TargetAttributes = {
 					906A0E551D19E5680044055F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 225T8G32Q4;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -279,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = instagramClone/instagramClone.entitlements;
 				INFOPLIST_FILE = instagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lindsey-Boggio.instagramClone";
@@ -290,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = instagramClone/instagramClone.entitlements;
 				INFOPLIST_FILE = instagramClone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lindsey-Boggio.instagramClone";
