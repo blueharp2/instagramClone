@@ -51,6 +51,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Photo" id="kG7-An-Zh7"/>
                     <connections>
+                        <outlet property="addButton" destination="uor-8X-95J" id="e7A-Ia-aNR"/>
                         <outlet property="imageView" destination="URA-5M-HMH" id="L31-1j-hJK"/>
                     </connections>
                 </viewController>

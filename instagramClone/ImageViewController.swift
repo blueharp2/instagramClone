@@ -11,6 +11,7 @@ import UIKit
 class ImageViewController: UIViewController, Setup, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate{
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addButton: UIButton!
    
     
     lazy var imagePicker = UIImagePickerController()
@@ -63,6 +64,8 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         self.imagePicker.sourceType = sourceType
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
     }
+    
+    
     @IBAction func AddButtonSelected(sender: AnyObject) {
         if UIImagePickerController .isSourceTypeAvailable(.Camera){
             self.presentActionSheet()
@@ -71,12 +74,28 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         }
     }
     
-//    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-//        if UIImagePickerController .isSourceTypeAvailable(.Camera){
-//            self.presentActionSheet()
-//            }else{
-//                self.presentImagePicker(.PhotoLibrary)
-//            }
-//        }
+    //    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+    //        if UIImagePickerController .isSourceTypeAvailable(.Camera){
+    //            self.presentActionSheet()
+    //            }else{
+    //                self.presentImagePicker(.PhotoLibrary)
+    //            }
+    //        }
+
+    
+    //Mark:UIPickerController Delegate
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.imageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.addButton.alpha = 0
+        
+    }
+    
+
 }
 
