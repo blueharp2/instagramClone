@@ -21,6 +21,14 @@
                                 <rect key="frame" x="20" y="69" width="560" height="462"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uor-8X-95J">
+                                <rect key="frame" x="285" y="275" width="30" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="AddButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DYY-PP-D1c"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -28,8 +36,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="URA-5M-HMH" secondAttribute="bottom" constant="20" id="ZOE-rg-Wwg"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g9b-JP-WvQ"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="poy-bn-AiK"/>
+                            <constraint firstItem="uor-8X-95J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rRR-YC-7g1"/>
                             <constraint firstAttribute="trailing" secondItem="URA-5M-HMH" secondAttribute="trailing" constant="20" id="tiO-0x-wpa"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vH1-tm-3b0"/>
+                            <constraint firstItem="uor-8X-95J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vs0-ir-eRR"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zbZ-EY-aGS"/>
                         </constraints>
                         <variation key="default">

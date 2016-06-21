@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, Setup, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class ImageViewController: UIViewController, Setup, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate{
 
     @IBOutlet weak var imageView: UIImageView!
+   
     
     lazy var imagePicker = UIImagePickerController()
     
@@ -20,6 +21,7 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         super.viewDidLoad()
         setup()
         setupAppearance()
+        
        // presentActionSheet()
         
     }
@@ -29,7 +31,8 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         
     }
     func setup(){
-        self.tabBarItem.title = "Instagram Clone"
+        self.tabBarItem.title = "Add Photo"
+        
         
     }
     
@@ -60,6 +63,20 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         self.imagePicker.sourceType = sourceType
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
     }
- 
+    @IBAction func AddButtonSelected(sender: AnyObject) {
+        if UIImagePickerController .isSourceTypeAvailable(.Camera){
+            self.presentActionSheet()
+        }else{
+            self.presentImagePicker(.PhotoLibrary)
+        }
+    }
+    
+//    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+//        if UIImagePickerController .isSourceTypeAvailable(.Camera){
+//            self.presentActionSheet()
+//            }else{
+//                self.presentImagePicker(.PhotoLibrary)
+//            }
+//        }
 }
 
