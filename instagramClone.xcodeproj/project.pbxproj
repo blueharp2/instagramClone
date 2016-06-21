@@ -16,6 +16,7 @@
 		906A0E721D19FEE90044055F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906A0E711D19FEE90044055F /* CloudKit.framework */; };
 		906A0E741D19FF700044055F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E731D19FF700044055F /* Post.swift */; };
 		906A0E771D1A00360044055F /* AppleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E761D1A00360044055F /* AppleExtensions.swift */; };
+		906A0E7A1D1A063C0044055F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E791D1A063C0044055F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		906A0E711D19FEE90044055F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		906A0E731D19FF700044055F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		906A0E761D1A00360044055F /* AppleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleExtensions.swift; sourceTree = "<group>"; };
+		906A0E791D1A063C0044055F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				906A0E761D1A00360044055F /* AppleExtensions.swift */,
+				906A0E791D1A063C0044055F /* Extensions.swift */,
 			);
 			name = Extensions;
 			path = ..;
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				906A0E6F1D19ED200044055F /* Protocols.swift in Sources */,
+				906A0E7A1D1A063C0044055F /* Extensions.swift in Sources */,
 				906A0E5C1D19E5680044055F /* ImageViewController.swift in Sources */,
 				906A0E5A1D19E5680044055F /* AppDelegate.swift in Sources */,
 				906A0E741D19FF700044055F /* Post.swift in Sources */,
