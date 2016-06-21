@@ -14,6 +14,8 @@
 		906A0E641D19E5680044055F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906A0E621D19E5680044055F /* LaunchScreen.storyboard */; };
 		906A0E6F1D19ED200044055F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E6E1D19ED200044055F /* Protocols.swift */; };
 		906A0E721D19FEE90044055F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 906A0E711D19FEE90044055F /* CloudKit.framework */; };
+		906A0E741D19FF700044055F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E731D19FF700044055F /* Post.swift */; };
+		906A0E771D1A00360044055F /* AppleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E761D1A00360044055F /* AppleExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		906A0E6E1D19ED200044055F /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		906A0E701D19FEE60044055F /* instagramClone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = instagramClone.entitlements; sourceTree = "<group>"; };
 		906A0E711D19FEE90044055F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		906A0E731D19FF700044055F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		906A0E761D1A00360044055F /* AppleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,9 @@
 		906A0E581D19E5680044055F /* instagramClone */ = {
 			isa = PBXGroup;
 			children = (
-				906A0E701D19FEE60044055F /* instagramClone.entitlements */,
 				906A0E6B1D19EAEB0044055F /* App Global */,
+				906A0E781D1A003C0044055F /* Extensions */,
+				906A0E751D19FF770044055F /* Models */,
 				906A0E6C1D19EB060044055F /* Controllers */,
 				906A0E6D1D19EB120044055F /* Views */,
 			);
@@ -72,6 +77,7 @@
 		906A0E6B1D19EAEB0044055F /* App Global */ = {
 			isa = PBXGroup;
 			children = (
+				906A0E701D19FEE60044055F /* instagramClone.entitlements */,
 				906A0E651D19E5680044055F /* Info.plist */,
 				906A0E591D19E5680044055F /* AppDelegate.swift */,
 				906A0E601D19E5680044055F /* Assets.xcassets */,
@@ -95,6 +101,24 @@
 				906A0E621D19E5680044055F /* LaunchScreen.storyboard */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		906A0E751D19FF770044055F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				906A0E731D19FF700044055F /* Post.swift */,
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		906A0E781D1A003C0044055F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				906A0E761D1A00360044055F /* AppleExtensions.swift */,
+			);
+			name = Extensions;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +201,8 @@
 				906A0E6F1D19ED200044055F /* Protocols.swift in Sources */,
 				906A0E5C1D19E5680044055F /* ImageViewController.swift in Sources */,
 				906A0E5A1D19E5680044055F /* AppDelegate.swift in Sources */,
+				906A0E741D19FF700044055F /* Post.swift in Sources */,
+				906A0E771D1A00360044055F /* AppleExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
