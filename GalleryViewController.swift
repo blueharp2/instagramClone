@@ -12,6 +12,10 @@ class GalleryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        API.shared.GET { (post) in
+//            print(post)
+//        }
+
 
         // Do any additional setup after loading the view.
     }

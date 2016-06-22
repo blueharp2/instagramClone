@@ -23,10 +23,6 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         setup()
         setupAppearance()
         
-//      API.shared.GET { (post) in
-//        print(post)
-//        }
-        
     }
     
     func setupAppearance(){
