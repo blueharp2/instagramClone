@@ -96,7 +96,9 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
             }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-           self.imageView.image = Filters.originalImage
+          // self.imageView.image = Filters.originalImage
+           //self.imageView.image = image
+            
         }
         
         actionSheet.addAction(filterOne)

@@ -14,6 +14,7 @@ class Filters{
     
     
     static var originalImage = UIImage()
+
     
     static let shared = Filters()
     private let context: CIContext
@@ -27,14 +28,11 @@ class Filters{
     }
     
     private func filter(name:String, image:UIImage, completion:FilterCompletion){
+        
         NSOperationQueue().addOperationWithBlock { 
             guard let filter = CIFilter(name: name) else { fatalError("Filter Failed")}
             
             filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
-            
-//            let options = [kCIContextWorkingColorSpace: NSNull()]
-//            let eAGLContext = EAGLContext(API: EAGLRenderingAPI.OpenGLES2)
-//            let gPUContext = CIContext(EAGLContext: eAGLContext, options: options)
             
             guard let outputImage = filter.outputImage else {fatalError("Error creating output image")}
                 
