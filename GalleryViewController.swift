@@ -11,6 +11,8 @@ import UIKit
 class GalleryViewController: UIViewController, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     var posts = [Post](){
         didSet{
@@ -22,18 +24,31 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.dataSource = self
-    
-        
+        self.setup()
     }
     
     override func viewWillAppear(animated: Bool) {
+        self.update()
+    }
+    
+    func update(){
+        
+        self.activityIndicator.startAnimating()
+        
         API.shared.GET { (post) in
             if let post = post{
                 self.posts = post
+                self.activityIndicator.stopAnimating()
             }
+            self.activityIndicator.alpha = 0
         }
     }
     
+    func setup(){
+        self.collectionView.collectionViewLayout = GalleryCustomFlowLayout()
+    }
+    
+    //MARK: CollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.posts.count
     }
