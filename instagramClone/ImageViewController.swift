@@ -90,18 +90,18 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         let actionSheet = UIAlertController(title: "Filters", message: "Choose Your Filter", preferredStyle: .ActionSheet)
         
         let filterOne = UIAlertAction(title: "Vintage", style: .Default) { (action) in
-            Filters.vintage(image) {(theImage) in
+            Filters.shared.vintage(image) {(theImage) in
                 self.imageView.image = theImage
             }
         }
         let filterTwo = UIAlertAction(title: "Tonal", style: .Default) { (action) in
-            Filters.tonal(image) {(theImage) in
+            Filters.shared.tonal(image) {(theImage) in
                 self.imageView.image = theImage
             }
         }
         
         let filterThree = UIAlertAction(title: "Process", style: .Default) { (action) in
-            Filters.process(image) {(theImage) in
+            Filters.shared.process(image) {(theImage) in
                 self.imageView.image = theImage
             }
         }
