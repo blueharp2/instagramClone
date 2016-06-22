@@ -52,6 +52,7 @@ class API{
                     completion(post:posts)
                 })
             }
+            completion(post: nil)
         }
     }
     
