@@ -36,12 +36,14 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource {
         self.activityIndicator.startAnimating()
         
         API.shared.GET { (post) in
+            print(post)
             if let post = post{
                 self.posts = post
                 self.activityIndicator.stopAnimating()
+                self.activityIndicator.alpha = 0
             }
-            self.activityIndicator.alpha = 0
         }
+        
     }
     
     func setup(){
