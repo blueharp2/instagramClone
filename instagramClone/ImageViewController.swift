@@ -90,15 +90,20 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         let actionSheet = UIAlertController(title: "Filters", message: "Choose Your Filter", preferredStyle: .ActionSheet)
         
         let filterOne = UIAlertAction(title: "Vintage", style: .Default) { (action) in
-            Filters.vintage(image, completion: <#T##FilterCompletion##FilterCompletion##(theImage: UIImage?) -> ()#>)
+            Filters.vintage(image) {(theImage) in
+                self.imageView.image = theImage
+            }
         }
-        
         let filterTwo = UIAlertAction(title: "Tonal", style: .Default) { (action) in
-            Filters.tonal(image, completion: <#T##FilterCompletion##FilterCompletion##(theImage: UIImage?) -> ()#>)
+            Filters.tonal(image) {(theImage) in
+                self.imageView.image = theImage
+            }
         }
         
-        let filterThree = UIAlertAction(title: "Vintage", style: .Default) { (action) in
-            Filters.process(image, completion: <#T##FilterCompletion##FilterCompletion##(theImage: UIImage?) -> ()#>)
+        let filterThree = UIAlertAction(title: "Process", style: .Default) { (action) in
+            Filters.process(image) {(theImage) in
+                self.imageView.image = theImage
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
            self.imageView.image = Filters.originalImage
@@ -120,7 +125,7 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         
         API.shared.write(Post(image: image)) { (success) in
             if success{
-                print(success)
+                print("Success")
             }
         }
     }
