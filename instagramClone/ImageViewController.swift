@@ -23,7 +23,9 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         setup()
         setupAppearance()
         
-       // presentActionSheet()
+//      API.shared.GET { (post) in
+//        print(post)
+//        }
         
     }
     
