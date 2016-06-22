@@ -20,6 +20,7 @@
 		906A0E7C1D1A08AD0044055F /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E7B1D1A08AD0044055F /* Filters.swift */; };
 		906A0E7F1D1A0DF20044055F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E7E1D1A0DF20044055F /* API.swift */; };
 		90B08A6B1D1B30EC006A2B1E /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B08A6A1D1B30EC006A2B1E /* GalleryViewController.swift */; };
+		90B08A6D1D1B32B4006A2B1E /* GalleryCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B08A6C1D1B32B4006A2B1E /* GalleryCustomFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		906A0E7B1D1A08AD0044055F /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		906A0E7E1D1A0DF20044055F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		90B08A6A1D1B30EC006A2B1E /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GalleryViewController.swift; path = ../GalleryViewController.swift; sourceTree = "<group>"; };
+		90B08A6C1D1B32B4006A2B1E /* GalleryCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCustomFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		906A0E6D1D19EB120044055F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				90B08A6C1D1B32B4006A2B1E /* GalleryCustomFlowLayout.swift */,
 				906A0E5D1D19E5680044055F /* Main.storyboard */,
 				906A0E621D19E5680044055F /* LaunchScreen.storyboard */,
 			);
@@ -222,6 +225,7 @@
 				906A0E7C1D1A08AD0044055F /* Filters.swift in Sources */,
 				906A0E6F1D19ED200044055F /* Protocols.swift in Sources */,
 				906A0E7A1D1A063C0044055F /* Extensions.swift in Sources */,
+				90B08A6D1D1B32B4006A2B1E /* GalleryCustomFlowLayout.swift in Sources */,
 				906A0E5C1D19E5680044055F /* ImageViewController.swift in Sources */,
 				906A0E5A1D19E5680044055F /* AppDelegate.swift in Sources */,
 				906A0E741D19FF700044055F /* Post.swift in Sources */,
