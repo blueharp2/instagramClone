@@ -29,13 +29,36 @@
                                     <action selector="AddButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DYY-PP-D1c"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKj-V8-v1s">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="H7N-ai-NaJ"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="gdW-ZB-OQR">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zZh-tX-TBw">
+                                            <connections>
+                                                <action selector="editButtonSelected:" destination="BYZ-38-t0r" id="lSu-p2-OTa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="m7Y-KG-UnF">
+                                            <connections>
+                                                <action selector="saveButtonSelected:" destination="BYZ-38-t0r" id="av2-EH-l34"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JKj-V8-v1s" secondAttribute="trailing" id="AYs-AW-R6D"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RYh-Cq-NVo"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="URA-5M-HMH" secondAttribute="bottom" constant="20" id="ZOE-rg-Wwg"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="g9b-JP-WvQ"/>
+                            <constraint firstItem="JKj-V8-v1s" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iVQ-XS-CIK"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="poy-bn-AiK"/>
+                            <constraint firstItem="JKj-V8-v1s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rBS-rX-NQ7"/>
                             <constraint firstItem="uor-8X-95J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rRR-YC-7g1"/>
                             <constraint firstAttribute="trailing" secondItem="URA-5M-HMH" secondAttribute="trailing" constant="20" id="tiO-0x-wpa"/>
                             <constraint firstItem="URA-5M-HMH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="vH1-tm-3b0"/>

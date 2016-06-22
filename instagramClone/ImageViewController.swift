@@ -83,6 +83,49 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
     //        }
 
     
+    @IBAction func editButtonSelected(sender: AnyObject) {
+        
+        guard let image = self.imageView.image else {return}
+        
+        let actionSheet = UIAlertController(title: "Filters", message: "Choose Your Filter", preferredStyle: .ActionSheet)
+        
+        let filterOne = UIAlertAction(title: "Vintage", style: .Default) { (action) in
+            Filters.vintage(image, completion: <#T##FilterCompletion##FilterCompletion##(theImage: UIImage?) -> ()#>)
+        }
+        
+        let filterTwo = UIAlertAction(title: "Tonal", style: .Default) { (action) in
+            Filters.tonal(image, completion: <#T##FilterCompletion##FilterCompletion##(theImage: UIImage?) -> ()#>)
+        }
+        
+        let filterThree = UIAlertAction(title: "Vintage", style: .Default) { (action) in
+            Filters.process(image, completion: <#T##FilterCompletion##FilterCompletion##(theImage: UIImage?) -> ()#>)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+           self.imageView.image = Filters.originalImage
+        }
+        
+        actionSheet.addAction(filterOne)
+        actionSheet.addAction(filterTwo)
+        actionSheet.addAction(filterThree)
+        actionSheet.addAction(cancelAction)
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+        
+        
+    }
+    
+    
+    @IBAction func saveButtonSelected(sender: AnyObject) {
+        guard let image = self.imageView.image else {return}
+        
+        API.shared.write(Post(image: image)) { (success) in
+            if success{
+                print(success)
+            }
+        }
+    }
+    
+    
     //Mark:UIPickerController Delegate
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
