@@ -138,6 +138,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Gallery" id="dEJ-A8-IXJ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="PZi-SG-c0O" id="VCs-xh-XPH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWr-cT-MNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,18 +8,42 @@
 
 import UIKit
 
-class GalleryViewController: UIViewController {
+class GalleryViewController: UIViewController, UICollectionViewDataSource {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        API.shared.GET { (post) in
-//            print(post)
-//        }
-
-
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var posts = [Post](){
+        didSet{
+            self.collectionView.reloadData()
+        }
     }
     
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.collectionView.dataSource = self
+    
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        API.shared.GET { (post) in
+            if let post = post{
+                self.posts = post
+            }
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.posts.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier(ImageCollectionViewCell.id(), forIndexPath: indexPath) as! ImageCollectionViewCell
+        
+        cell.post = self.posts[indexPath.row]
+        
+        return cell
+    }
 
 }
