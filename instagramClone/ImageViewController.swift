@@ -73,14 +73,6 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
             self.presentImagePicker(.PhotoLibrary)
         }
     }
-    
-    //    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-    //        if UIImagePickerController .isSourceTypeAvailable(.Camera){
-    //            self.presentActionSheet()
-    //            }else{
-    //                self.presentImagePicker(.PhotoLibrary)
-    //            }
-    //        }
 
     
     @IBAction func editButtonSelected(sender: AnyObject) {
