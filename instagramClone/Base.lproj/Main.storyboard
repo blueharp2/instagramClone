@@ -82,6 +82,69 @@
             </objects>
             <point key="canvasLocation" x="1124" y="168"/>
         </scene>
+        <!--Filter Preivew View Controller-->
+        <scene sceneID="jKs-IJ-pL7">
+            <objects>
+                <viewController storyboardIdentifier="FilterPreivewViewController" id="4ZM-Sp-kwP" customClass="FilterPreivewViewController" customModule="instagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zOC-SS-fFK"/>
+                        <viewControllerLayoutGuide type="bottom" id="wll-lk-C1O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sGl-c9-Ueb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aCt-ld-wD2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O7y-gJ-A94">
+                                    <size key="itemSize" width="180" height="172"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="alr-Hu-bV8" customClass="ImageCollectionViewCell" customModule="instagramClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="172"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="172"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k2t-L8-4ft">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="172"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="k2t-L8-4ft" firstAttribute="leading" secondItem="alr-Hu-bV8" secondAttribute="leading" id="AMj-7K-9aq"/>
+                                            <constraint firstAttribute="trailing" secondItem="k2t-L8-4ft" secondAttribute="trailing" id="OaT-Fu-TaM"/>
+                                            <constraint firstAttribute="bottom" secondItem="k2t-L8-4ft" secondAttribute="bottom" id="od0-dW-LLe"/>
+                                            <constraint firstItem="k2t-L8-4ft" firstAttribute="top" secondItem="alr-Hu-bV8" secondAttribute="top" id="t8X-0a-Uzf"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="k2t-L8-4ft" id="Q9U-oj-787"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wll-lk-C1O" firstAttribute="top" secondItem="aCt-ld-wD2" secondAttribute="bottom" id="9h3-56-d9D"/>
+                            <constraint firstItem="aCt-ld-wD2" firstAttribute="leading" secondItem="sGl-c9-Ueb" secondAttribute="leading" id="YvF-T3-FQe"/>
+                            <constraint firstItem="aCt-ld-wD2" firstAttribute="top" secondItem="sGl-c9-Ueb" secondAttribute="top" id="xgZ-9n-pjm"/>
+                            <constraint firstAttribute="trailing" secondItem="aCt-ld-wD2" secondAttribute="trailing" id="zH8-A0-XGw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="aCt-ld-wD2" id="bn4-4t-8iM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SqA-jE-8dO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1126" y="859"/>
+        </scene>
         <!--Gallery-->
         <scene sceneID="Xru-NN-n1c">
             <objects>

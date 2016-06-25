@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		900270FF1D1F38C20040AC07 /* FilterPreivewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900270FE1D1F38C20040AC07 /* FilterPreivewViewController.swift */; };
 		906A0E5A1D19E5680044055F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E591D19E5680044055F /* AppDelegate.swift */; };
 		906A0E5C1D19E5680044055F /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906A0E5B1D19E5680044055F /* ImageViewController.swift */; };
 		906A0E5F1D19E5680044055F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 906A0E5D1D19E5680044055F /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		900270FE1D1F38C20040AC07 /* FilterPreivewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterPreivewViewController.swift; sourceTree = "<group>"; };
 		906A0E561D19E5680044055F /* instagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		906A0E591D19E5680044055F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		906A0E5B1D19E5680044055F /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		906A0E6C1D19EB060044055F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				900270FE1D1F38C20040AC07 /* FilterPreivewViewController.swift */,
 				90B08A6A1D1B30EC006A2B1E /* GalleryViewController.swift */,
 				906A0E5B1D19E5680044055F /* ImageViewController.swift */,
 				906A0E6E1D19ED200044055F /* Protocols.swift */,
@@ -230,6 +233,7 @@
 				906A0E6F1D19ED200044055F /* Protocols.swift in Sources */,
 				906A0E7A1D1A063C0044055F /* Extensions.swift in Sources */,
 				90B08A6D1D1B32B4006A2B1E /* GalleryCustomFlowLayout.swift in Sources */,
+				900270FF1D1F38C20040AC07 /* FilterPreivewViewController.swift in Sources */,
 				906A0E5C1D19E5680044055F /* ImageViewController.swift in Sources */,
 				906A0E5A1D19E5680044055F /* AppDelegate.swift in Sources */,
 				906A0E741D19FF700044055F /* Post.swift in Sources */,
