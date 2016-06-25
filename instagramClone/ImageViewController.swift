@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, Setup, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate{
+class ImageViewController: UIViewController, Setup, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITabBarDelegate, FiltersPreviewViewControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var addButton: UIButton!
@@ -109,6 +109,26 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
 //        }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "FilterPreviewViewController"{
+            guard let filtersPreviewViewController = segue.destinationViewController as? FilterPreivewViewController else {return}
+            
+            filtersPreviewViewController.delegate = self
+            filtersPreviewViewController.post = self.post
+        }
+    }
+    
+    //Mark:FiltersPreviewViewControllerDelegate
+    
+    func didFinishPickingImage(sucess: Bool, image: UIImage?) {
+        if sucess{
+            guard let image = image else {return}
+            self.imageView.image = image
+        }else{
+            print("Error")
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     //Mark:UIPickerController Delegate
     
