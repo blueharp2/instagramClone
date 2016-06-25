@@ -25,6 +25,7 @@ class GalleryViewController: UIViewController, UICollectionViewDataSource {
         super.viewDidLoad()
         self.collectionView.dataSource = self
         self.setup()
+        self.setupCollectionView()
     }
     
     override func viewWillAppear(animated: Bool) {
