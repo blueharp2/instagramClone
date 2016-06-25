@@ -15,6 +15,7 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
    
     
     lazy var imagePicker = UIImagePickerController()
+    var post = Post()
     
     
     
@@ -77,36 +78,39 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         
         guard let image = self.imageView.image else {return}
         
-        let actionSheet = UIAlertController(title: "Filters", message: "Choose Your Filter", preferredStyle: .ActionSheet)
+        self.post = Post(image: image)
+        self.performSegueWithIdentifier("FilterPreviewViewController", sender: nil)
         
-        let filterOne = UIAlertAction(title: "Vintage", style: .Default) { (action) in
-            Filters.shared.vintage(image) {(theImage) in
-                self.imageView.image = theImage
-            }
-        }
-        let filterTwo = UIAlertAction(title: "Tonal", style: .Default) { (action) in
-            Filters.shared.tonal(image) {(theImage) in
-                self.imageView.image = theImage
-            }
-        }
-        
-        let filterThree = UIAlertAction(title: "Process", style: .Default) { (action) in
-            Filters.shared.process(image) {(theImage) in
-                self.imageView.image = theImage
-            }
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-          // self.imageView.image = Filters.originalImage
-           //self.imageView.image = image
-            
-        }
-        
-        actionSheet.addAction(filterOne)
-        actionSheet.addAction(filterTwo)
-        actionSheet.addAction(filterThree)
-        actionSheet.addAction(cancelAction)
-        
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+//        let actionSheet = UIAlertController(title: "Filters", message: "Choose Your Filter", preferredStyle: .ActionSheet)
+//        
+//        let filterOne = UIAlertAction(title: "Vintage", style: .Default) { (action) in
+//            Filters.shared.vintage(image) {(theImage) in
+//                self.imageView.image = theImage
+//            }
+//        }
+//        let filterTwo = UIAlertAction(title: "Tonal", style: .Default) { (action) in
+//            Filters.shared.tonal(image) {(theImage) in
+//                self.imageView.image = theImage
+//            }
+//        }
+//        
+//        let filterThree = UIAlertAction(title: "Process", style: .Default) { (action) in
+//            Filters.shared.process(image) {(theImage) in
+//                self.imageView.image = theImage
+//            }
+//        }
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+//          // self.imageView.image = Filters.originalImage
+//           //self.imageView.image = image
+//            
+//        }
+//        
+//        actionSheet.addAction(filterOne)
+//        actionSheet.addAction(filterTwo)
+//        actionSheet.addAction(filterThree)
+//        actionSheet.addAction(cancelAction)
+//        
+//        self.presentViewController(actionSheet, animated: true, completion: nil)
         
         
     }

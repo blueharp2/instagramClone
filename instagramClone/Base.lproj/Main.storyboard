@@ -39,6 +39,7 @@
                                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="zZh-tX-TBw">
                                             <connections>
                                                 <action selector="editButtonSelected:" destination="BYZ-38-t0r" id="lSu-p2-OTa"/>
+                                                <segue destination="4ZM-Sp-kwP" kind="presentation" identifier="FilterPreviewViewController" id="FFo-G1-OLh"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="m7Y-KG-UnF">
@@ -143,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SqA-jE-8dO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="859"/>
+            <point key="canvasLocation" x="1124" y="925"/>
         </scene>
         <!--Gallery-->
         <scene sceneID="Xru-NN-n1c">
