@@ -63,6 +63,13 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         self.imagePicker.sourceType = sourceType
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
     }
+    func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo: UnsafePointer<Void>){
+        if error == nil{
+            let alertController = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
     
     
     @IBAction func AddButtonSelected(sender: AnyObject) {
@@ -81,49 +88,25 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         self.post = Post(image: image)
         self.performSegueWithIdentifier("FilterPreviewViewController", sender: nil)
         
-//        let actionSheet = UIAlertController(title: "Filters", message: "Choose Your Filter", preferredStyle: .ActionSheet)
-//        
-//        let filterOne = UIAlertAction(title: "Vintage", style: .Default) { (action) in
-//            Filters.shared.vintage(image) {(theImage) in
-//                self.imageView.image = theImage
-//            }
-//        }
-//        let filterTwo = UIAlertAction(title: "Tonal", style: .Default) { (action) in
-//            Filters.shared.tonal(image) {(theImage) in
-//                self.imageView.image = theImage
-//            }
-//        }
-//        
-//        let filterThree = UIAlertAction(title: "Process", style: .Default) { (action) in
-//            Filters.shared.process(image) {(theImage) in
-//                self.imageView.image = theImage
-//            }
-//        }
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-//          // self.imageView.image = Filters.originalImage
-//           //self.imageView.image = image
-//            
-//        }
-//        
-//        actionSheet.addAction(filterOne)
-//        actionSheet.addAction(filterTwo)
-//        actionSheet.addAction(filterThree)
-//        actionSheet.addAction(cancelAction)
-//        
-//        self.presentViewController(actionSheet, animated: true, completion: nil)
-        
-        
     }
     
     
     @IBAction func saveButtonSelected(sender: AnyObject) {
         guard let image = self.imageView.image else {return}
         
-        API.shared.write(Post(image: image)) { (success) in
+        self.post = Post(image: image)
+        
+        API.shared.write(self.post) { (success) in
             if success{
-                print("Success")
+                UIImageWriteToSavedPhotosAlbum(self.imageView.image!, self, #selector(ImageViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
             }
         }
+        
+//        API.shared.write(Post(image: image)) { (success) in
+//            if success{
+//                print("Success")
+//            }
+//        }
     }
     
     
