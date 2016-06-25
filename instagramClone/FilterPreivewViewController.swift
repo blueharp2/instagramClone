@@ -40,7 +40,8 @@ extension FilterPreivewViewController:UICollectionViewDataSource, UICollectionVi
      
         let imageCell = self.collectionView.dequeueReusableCellWithReuseIdentifier(ImageCollectionViewCell.id(), forIndexPath: indexPath) as! ImageCollectionViewCell
         
-        self.filters[indexPath.row](post.image, completion: { imageCell.imageVIew.image = $0})
+        self.filters[indexPath.row](post.image, completion: {imageCell.imageVIew.image = $0})
+        
         return imageCell
     }
     

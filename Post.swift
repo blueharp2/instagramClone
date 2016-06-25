@@ -9,7 +9,7 @@
 import UIKit
 
 class Post{
-    let image: UIImage
+    var image: UIImage
     
     init(image:UIImage){
         self.image = image
