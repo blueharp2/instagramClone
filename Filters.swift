@@ -13,45 +13,82 @@ typealias FilterCompletion = (theImage:UIImage?)->()
 class Filters{
     
     
-    static var originalImage = UIImage()
-
-    
-    static let shared = Filters()
-    private let context: CIContext
-    
-    private init(){
+    private class func filter(name:String, image:UIImage, completion:FilterCompletion){
         
-        let options = [kCIContextWorkingColorSpace: NSNull()]
-        let eAGLContext = EAGLContext(API: EAGLRenderingAPI.OpenGLES2)
-        self.context = CIContext(EAGLContext: eAGLContext, options: options)
-        
-    }
-    
-    private func filter(name:String, image:UIImage, completion:FilterCompletion){
-        
-        NSOperationQueue().addOperationWithBlock { 
+        NSOperationQueue().addOperationWithBlock {
             guard let filter = CIFilter(name: name) else { fatalError("Filter Failed")}
-            
             filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
             
-            guard let outputImage = filter.outputImage else {fatalError("Error creating output image")}
-                
-            let cgImage = self.context.createCGImage(outputImage, fromRect: outputImage.extent)
+            //GPU Context
+            let options = [kCIContextWorkingColorSpace: NSNull()]
+            let eAGLContext = EAGLContext(API: EAGLRenderingAPI.OpenGLES2)
+            let GPUContext = CIContext(EAGLContext: eAGLContext, options: options)
             
-            NSOperationQueue.mainQueue().addOperationWithBlock({ 
+            // Get final Image using GPU Rendering
+            guard let outputImage = filter.outputImage else {fatalError("Error creating output image")}
+            let cgImage = GPUContext.createCGImage(outputImage, fromRect: outputImage.extent)
+            
+            NSOperationQueue.mainQueue().addOperationWithBlock({
                 completion(theImage: UIImage(CGImage: cgImage))
             })
         }
     }
     
-    func vintage(image:UIImage, completion: FilterCompletion){
+    static var original = UIImage()
+    
+    class func original(image: UIImage, completion: FilterCompletion){
+        completion(theImage: self.original)
+    }
+    class func vintage(image:UIImage, completion: FilterCompletion){
         self.filter("CIPhotoEffectTransfer", image: image, completion: completion)
     }
-    func tonal(image:UIImage, completion: FilterCompletion){
+    class func tonal(image:UIImage, completion: FilterCompletion){
         self.filter("CIPhotoEffectTonal", image: image, completion: completion)
     }
-    func process(image:UIImage, completion: FilterCompletion){
+    class func process(image:UIImage, completion: FilterCompletion){
         self.filter("CIPhotoEffectProcess", image: image, completion: completion)
     }
+
+    
+//    static var originalImage = UIImage()
+//
+//    
+//    static let shared = Filters()
+//    private let context: CIContext
+//    
+//    private init(){
+//        
+//        let options = [kCIContextWorkingColorSpace: NSNull()]
+//        let eAGLContext = EAGLContext(API: EAGLRenderingAPI.OpenGLES2)
+//        self.context = CIContext(EAGLContext: eAGLContext, options: options)
+//        
+//    }
+//    
+//    private func filter(name:String, image:UIImage, completion:FilterCompletion){
+//        
+//        NSOperationQueue().addOperationWithBlock { 
+//            guard let filter = CIFilter(name: name) else { fatalError("Filter Failed")}
+//            
+//            filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
+//            
+//            guard let outputImage = filter.outputImage else {fatalError("Error creating output image")}
+//                
+//            let cgImage = self.context.createCGImage(outputImage, fromRect: outputImage.extent)
+//            
+//            NSOperationQueue.mainQueue().addOperationWithBlock({ 
+//                completion(theImage: UIImage(CGImage: cgImage))
+//            })
+//        }
+//    }
+//    
+//    func vintage(image:UIImage, completion: FilterCompletion){
+//        self.filter("CIPhotoEffectTransfer", image: image, completion: completion)
+//    }
+//    func tonal(image:UIImage, completion: FilterCompletion){
+//        self.filter("CIPhotoEffectTonal", image: image, completion: completion)
+//    }
+//    func process(image:UIImage, completion: FilterCompletion){
+//        self.filter("CIPhotoEffectProcess", image: image, completion: completion)
+//    }
     
 }
