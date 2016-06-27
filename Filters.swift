@@ -24,7 +24,7 @@ class Filters{
             let GPUContext = CIContext(EAGLContext: eAGLContext, options: options)
             
             // Get final Image using GPU Rendering
-            guard let outputImage = filter.outputImage else { /*return*/ fatalError("Error creating output image")}
+            guard let outputImage = filter.outputImage else { fatalError("Error creating output image")}
             let cgImage = GPUContext.createCGImage(outputImage, fromRect: outputImage.extent)
             
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
