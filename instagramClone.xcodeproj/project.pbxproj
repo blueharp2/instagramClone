@@ -132,7 +132,6 @@
 			children = (
 				908785D91D21CE1A00A258C2 /* Identity.swift */,
 				906A0E731D19FF700044055F /* Post.swift */,
-				906A0E7B1D1A08AD0044055F /* Filters.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -152,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				906A0E7E1D1A0DF20044055F /* API.swift */,
+				906A0E7B1D1A08AD0044055F /* Filters.swift */,
 			);
 			name = Utilities;
 			path = ..;

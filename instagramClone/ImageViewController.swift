@@ -60,8 +60,10 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
     func presentImagePicker(sourceType:UIImagePickerControllerSourceType){
         self.imagePicker.delegate = self
         self.imagePicker.sourceType = sourceType
-        self.presentViewController(self.imagePicker, animated: true, completion: nil)
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+        
     }
+    
     func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo: UnsafePointer<Void>){
         if error == nil{
             let alertController = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .Alert)
@@ -72,7 +74,7 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
     
     
     @IBAction func AddButtonSelected(sender: AnyObject) {
-        if UIImagePickerController .isSourceTypeAvailable(.Camera){
+        if UIImagePickerController.isSourceTypeAvailable(.Camera){
             self.presentActionSheet()
         }else{
             self.presentImagePicker(.PhotoLibrary)
@@ -85,12 +87,12 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
         guard let image = self.imageView.image else {return}
         
         self.post = Post(image: image)
-        self.performSegueWithIdentifier("FilterPreviewViewController", sender: nil)
+        self.performSegueWithIdentifier(FilterPreivewViewController.id(), sender: nil)
         
     }
     
     
-    @IBAction func saveButtonSelected(sender: AnyObject) {
+    @IBAction func saveButtonSelected(sender: UIBarButtonItem) {
         guard let image = self.imageView.image else {return}
         
         self.post = Post(image: image)
