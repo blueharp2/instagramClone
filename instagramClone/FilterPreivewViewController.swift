@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilterPreivewViewController: UIViewController {
+class FilterPreivewViewController: UIViewController, Identity{
 
     @IBOutlet weak var collectionView: UICollectionView!
     

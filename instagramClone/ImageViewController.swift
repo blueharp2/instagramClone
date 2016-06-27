@@ -33,11 +33,10 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
     func setup(){
         self.tabBarItem.title = "Add Photo"
         
-        
     }
     
     func presentActionSheet(){
-        let actionSheet = UIAlertController(title: "Find Image", message: "Do you want to use your camera or photo library?", preferredStyle: .Alert)
+        let actionSheet = UIAlertController(title: "Source", message: "Do you want to use your camera or photo library?", preferredStyle: .Alert)
         
         let cameraAction = UIAlertAction(title: "Camera", style: .Default) { (action) in
             self.presentImagePicker(.Camera)
@@ -110,7 +109,7 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "FilterPreviewViewController"{
+        if segue.identifier == FilterPreivewViewController.id(){
             guard let filtersPreviewViewController = segue.destinationViewController as? FilterPreivewViewController else {return}
             
             filtersPreviewViewController.delegate = self
@@ -137,10 +136,11 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        Filters.original = image
         self.imageView.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
         self.addButton.alpha = 0
-        
     }
     
 
