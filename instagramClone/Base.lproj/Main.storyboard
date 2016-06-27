@@ -124,7 +124,7 @@
                                             <constraint firstItem="k2t-L8-4ft" firstAttribute="top" secondItem="alr-Hu-bV8" secondAttribute="top" id="t8X-0a-Uzf"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="k2t-L8-4ft" id="Q9U-oj-787"/>
+                                            <outlet property="imageVIew" destination="k2t-L8-4ft" id="Pap-hi-nr7"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -8,14 +8,9 @@
 
 import UIKit
 
-class ImageCollectionViewCell: UICollectionViewCell {
+class ImageCollectionViewCell: UICollectionViewCell, Identity {
     
     @IBOutlet weak var imageVIew: UIImageView!
-    @IBOutlet weak var imageView: UIImageView!
-    
-    class func id() ->String{
-        return String(self)
-    }
     
     var post:Post?{
         didSet{

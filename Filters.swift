@@ -15,7 +15,7 @@ class Filters{
     
     private class func filter(name:String, image:UIImage, completion:FilterCompletion){
         
-        NSOperationQueue().addOperationWithBlock {
+        NSOperationQueue().addOperationWithBlock { () -> Void in
             guard let filter = CIFilter(name: name) else { fatalError("Filter Failed")}
             filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
             
@@ -25,10 +25,10 @@ class Filters{
             let GPUContext = CIContext(EAGLContext: eAGLContext, options: options)
             
             // Get final Image using GPU Rendering
-            guard let outputImage = filter.outputImage else {fatalError("Error creating output image")}
+            guard let outputImage = filter.outputImage else { return /*fatalError("Error creating output image")*/}
             let cgImage = GPUContext.createCGImage(outputImage, fromRect: outputImage.extent)
             
-            NSOperationQueue.mainQueue().addOperationWithBlock({
+            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                 completion(theImage: UIImage(CGImage: cgImage))
             })
         }
