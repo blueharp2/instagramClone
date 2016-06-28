@@ -15,6 +15,7 @@ class Filters{
     private class func filter(name:String, image:UIImage, completion:FilterCompletion){
         
         NSOperationQueue().addOperationWithBlock { () -> Void in
+            
             guard let filter = CIFilter(name: name) else { fatalError("Filter Failed")}
             filter.setValue(CIImage(image: image), forKey: kCIInputImageKey)
             

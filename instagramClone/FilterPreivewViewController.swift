@@ -63,5 +63,4 @@ extension FilterPreivewViewController:UICollectionViewDataSource, UICollectionVi
             delegate.didFinishPickingImage(false, image: nil)
         }
     }
-    
 }
