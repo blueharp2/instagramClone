@@ -14,7 +14,7 @@ class FilterPreivewViewController: UIViewController, Identity{
     
     weak var delegate: FiltersPreviewViewControllerDelegate?
     
-    let filters = [Filters.original, Filters.process, Filters.tonal, Filters.vintage]
+    let filters = [Filters.shared.original, Filters.shared.process, Filters.shared.tonal, Filters.shared.vintage]
     var post = Post()
     
     override func viewDidLoad() {

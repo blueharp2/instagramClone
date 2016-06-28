@@ -139,7 +139,7 @@ class ImageViewController: UIViewController, Setup, UIImagePickerControllerDeleg
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
-        Filters.original = image
+        Filters.originalImage = image
         self.imageView.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
         self.addButton.alpha = 0
